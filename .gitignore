@@ -1,0 +1,15 @@
+# Mac OS X
+.DS_Store
+
+# Node
+npm-debug.log
+node_modules/
+package-lock.json
+yarn.lock
+
+# Sublime Text
+*.sublime-*
+
+# Coverage
+.nyc_output
+coverage
