@@ -1,5 +1,7 @@
 # ewd-memory-globals: Memory emulation of Global Storage database
- 
+
+[![Build Status](https://travis-ci.org/killmenot/ewd-memory-globals.svg?branch=master)](https://travis-ci.org/killmenot/ewd-memory-globals) [![Coverage Status](https://coveralls.io/repos/github/killmenot/ewd-memory-globals/badge.svg?branch=master)](https://coveralls.io/github/killmenot/ewd-memory-globals?branch=master)
+
 Rob Tweed <rtweed@mgateway.com>
 1 December 2016, M/Gateway Developments Ltd [http://www.mgateway.com](http://www.mgateway.com)  
 
