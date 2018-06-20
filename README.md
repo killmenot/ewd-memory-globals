@@ -3,30 +3,24 @@
 [![Build Status](https://travis-ci.org/killmenot/ewd-memory-globals.svg?branch=master)](https://travis-ci.org/killmenot/ewd-memory-globals) [![Coverage Status](https://coveralls.io/repos/github/killmenot/ewd-memory-globals/badge.svg?branch=master)](https://coveralls.io/github/killmenot/ewd-memory-globals?branch=master)
 
 Rob Tweed <rtweed@mgateway.com>
-1 December 2016, M/Gateway Developments Ltd [http://www.mgateway.com](http://www.mgateway.com)  
+20 June 2018, M/Gateway Developments Ltd [http://www.mgateway.com](http://www.mgateway.com)  
 
 Twitter: [@rtweed](https://twitter.com/rtweed)
 
 Google Group for discussions, support, advice etc: [http://groups.google.co.uk/group/enterprise-web-developer-community](http://groups.google.co.uk/group/enterprise-web-developer-community)
 
-Special thanks to the Ripple Foundation [http://rippleosi.org](http://rippleosi.org) for
-support and funding of this project.
+Special thanks to the Ripple Foundation [http://rippleosi.org](http://rippleosi.org) for support and funding of this project.
 
 
 ## ewd-memory-globals
 
 This module provides an emulation of a Global Storage database using memory storage.
 
-The APIs are modelled on the *cache.node* interface provided by the Cach&eacute; database (a
-proprietary Global Storage database) and are designed to behave identically.
+The APIs are modelled on the *cache.node* interface provided by the Cach&eacute; database (a proprietary Global Storage database) and are designed to behave identically.
 
-NOTE: the APIs make use of a synchronous TCP connector: [*tcp-netx*](https://github.com/chrisemunt/tcp-netx).  It is
-designed to be used in conjunction with the [ewd-qoper8](https://github.com/robtweed/ewd-qoper8) module and used within 
-its worker processes, where synchronous database access does not interfere with 
-the main Node.js process, rather than in conventional Node.js-based applications.
+It is designed to be used in conjunction with the [ewd-qoper8](https://github.com/robtweed/ewd-qoper8) module and used within  its worker processes, where synchronous database access does not interfere with the main Node.js process, rather than in conventional Node.js-based applications.
 
-See [https://robtweed.wordpress.com/2016/03/03/higher-level-database-operations-with-node-js/](https://robtweed.wordpress.com/2016/03/03/higher-level-database-operations-with-node-js/) for
-further background.
+See [https://robtweed.wordpress.com/2016/03/03/higher-level-database-operations-with-node-js/](https://robtweed.wordpress.com/2016/03/03/higher-level-database-operations-with-node-js/) for further background.
 
 
 ## APIs
@@ -51,12 +45,9 @@ The following APIs are provided:
 
 ## Examples
 
-Several examples demonstrating the use of *ewd-memory-globals* are included in the
-*/examples* folder.
+Several examples demonstrating the use of *ewd-memory-globals* are included in the */examples* folder.
 
-In addition to basic API tests, you can also see how the *ewd-document-store*
-module provides a high-level abstraction of *ewd-memory-global's* Global Storage 
-as:
+In addition to basic API tests, you can also see how the *ewd-document-store* module provides a high-level abstraction of *ewd-memory-global's* Global Storage as:
 
 - persistent JavaScript Objects
 - document database
@@ -75,6 +66,7 @@ ewd-document-store JavaScript abstraction on the M/Gateway Web Site: go to:
 Click the *Training* tab.  Parts 17 to 27 will provide in-depth background. *ewd-memory-globals* will behave
 identically to the other Global Storage databases referred to in these presentations.
 
+
 ## How Global Storage is Emulated in ewd-memory-globals
 
 To understand the basics of a Global Storage database, see 
@@ -83,12 +75,9 @@ To understand the basics of a Global Storage database, see
 
 The hierarchical structure of a Global is emulated using plain JavaScript object
 
-- node:xxxx  A hash that contains details about each Global Node, specifically whether it's a leaf-node
- or not, and if so, its value
-
-- children:xxxx  A sorted list containing any child subscript values for each of a Global's nodes
-
-- leaves:xxxx  A sorted list containing pointers to the node: keys for leaf nodes only
+ - node:xxxx  A hash that contains details about each Global Node, specifically whether it's a leaf-node or not, and if so, its value
+ - children:xxxx  A sorted list containing any child subscript values for each of a Global's nodes
+ - leaves:xxxx  A sorted list containing pointers to the node: keys for leaf nodes only
 
 A global node key (xxxx) is constructed from the Global name and its Subscripts.  They are flattened into
 a singe string using Hex 01 as a delimiter.  For example the Global Node:
