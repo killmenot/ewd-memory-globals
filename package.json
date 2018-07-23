@@ -1,6 +1,6 @@
 {
   "name": "ewd-memory-globals",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Memory emulation of Global Storage database",
   "author": "Alexey Kucherenko",
   "license": "Apache-2.0",
