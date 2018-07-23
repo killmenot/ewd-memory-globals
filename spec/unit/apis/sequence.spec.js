@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  18 June 2018
+  23 July 2018
 
 */
 
@@ -45,6 +45,7 @@ describe('api/sequence', () => {
     Db = function () {
       /*jshint camelcase: false */
       this.key_separator = ':';
+      this.integer_padding = 10;
       /*jshint camelcase: true */
 
       this.store = createStore();
@@ -57,12 +58,15 @@ describe('api/sequence', () => {
 
   beforeEach(() => {
     db = new Db();
-
     db.createNode('rob', ['a', 'b'], 'foo');
     db.createNode('rob', ['a', 'b', 'c'], 'baz');
     db.createNode('rob', ['a', 'b', 'd'], 'bar');
     db.createNode('rob', ['a', 'b', 'g'], 'bar2');
     db.createNode('rob', ['a', 'e'], 'quux');
+
+    db.createNode('rob', ['c', 0], 'a');
+    db.createNode('rob', ['c', 1], 's');
+    db.createNode('rob', ['c', 2], 'd');
   });
 
   it('should return non ok', () => {
@@ -235,7 +239,7 @@ describe('api/sequence', () => {
       global: 'rob',
       subscripts: ['a', 'e', 'b']
     };
-    const actual = db.sequence(node, 'previous');
+    const actual = db.sequence(node, 'next');
 
     expect(actual).toEqual(expected);
   });
@@ -252,6 +256,114 @@ describe('api/sequence', () => {
       global: 'rob',
       subscripts: ['a', 'e', 'b']
     };
+    const actual = db.sequence(node, 'previous');
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return next node for subscripted node with integer (zero)', () => {
+    const expected = {
+      ok: 1,
+      global: 'rob',
+      result: 1,
+      subscripts: ['c', 1]
+    };
+
+    const node = {
+      global: 'rob',
+      subscripts: ['c', 0]
+    };
+
+    const actual = db.sequence(node, 'next');
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return next node for subscripted node with integer (non-zero)', () => {
+    const expected = {
+      ok: 1,
+      global: 'rob',
+      result: 2,
+      subscripts: ['c', 2]
+    };
+
+    const node = {
+      global: 'rob',
+      subscripts: ['c', 1]
+    };
+
+    const actual = db.sequence(node, 'next');
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return first node for subscripted node with integer', () => {
+    const expected = {
+      ok: 1,
+      global: 'rob',
+      result: 0,
+      subscripts: ['c', 0]
+    };
+
+    const node = {
+      global: 'rob',
+      subscripts: ['c', 0, '']
+    };
+
+    const actual = db.sequence(node, 'next');
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return last node for subscripted node with integer', () => {
+    const expected = {
+      ok: 1,
+      global: 'rob',
+      result: 2,
+      subscripts: ['c', 2]
+    };
+
+    const node = {
+      global: 'rob',
+      subscripts: ['c', 0, '']
+    };
+
+    const actual = db.sequence(node, 'previous');
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return empty result when passed next for non-existed node with integer', () => {
+    const expected = {
+      ok: 1,
+      global: 'rob',
+      result: '',
+      subscripts: ['c', '']
+    };
+
+    const node = {
+      global: 'rob',
+      subscripts: ['c', 5]
+    };
+
+    const actual = db.sequence(node, 'next');
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return last node when passed previous for non-existed node with integer', () => {
+    const expected = {
+      ok: 1,
+      global: 'rob',
+      result: 2,
+      subscripts: ['c', 2]
+    };
+
+    const node = {
+      global: 'rob',
+      subscripts: ['c', 5]
+    };
+
     const actual = db.sequence(node, 'previous');
 
     expect(actual).toEqual(expected);
