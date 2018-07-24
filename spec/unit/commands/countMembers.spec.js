@@ -1,7 +1,7 @@
 /*
 
  ----------------------------------------------------------------------------
- | ewd-memory-global: Memory emulation of Global Storage database           |
+ | ewd-memory-globals: Memory emulation of Global Storage database          |
  |                                                                          |
  | Copyright (c) 2018 M/Gateway Developments Ltd,                           |
  | Reigate, Surrey UK.                                                      |
@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  18 June 2018
+  24 July 2018
 
 */
 
