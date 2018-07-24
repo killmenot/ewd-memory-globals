@@ -2,7 +2,7 @@
   "node": true,
   "jasmine": true,
   "bitwise": true,
-  "camelcase": true,
+  "camelcase": false,
   "curly": true,
   "esversion": 6,
   "forin": true,
