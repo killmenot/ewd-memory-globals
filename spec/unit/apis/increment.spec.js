@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  24 July 2018
+  26 July 2018
 
 */
 
@@ -79,7 +79,7 @@ describe('api/increment', () => {
     const expected = {
       ok: 1,
       global: 'rob',
-      data: 1,
+      data: '1',
       subscripts: ['a', 'b']
     };
 
@@ -97,7 +97,7 @@ describe('api/increment', () => {
     const expected = {
       ok: 1,
       global: 'rob',
-      data: 4,
+      data: '4',
       subscripts: ['a', 'b']
     };
 

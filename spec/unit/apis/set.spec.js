@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  24 July 2018
+  26 July 2018
 
 */
 
@@ -87,17 +87,17 @@ describe('api/set', () => {
     };
     const expectedStore = {
       'node:rob:a:b': {
-        data: 1,
+        data: '1',
         value: 'foo'
       },
       'leaves:rob': ['a:b'],
       'children:rob:a': ['b'],
       'node:rob:a': {
-        data: 10
+        data: '10'
       },
       'children:rob': ['a'],
       'node:rob': {
-        data: 10
+        data: '10'
       }
     };
 

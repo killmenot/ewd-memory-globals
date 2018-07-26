@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  24 July 2018
+  26 July 2018
 
 */
 
@@ -73,7 +73,7 @@ describe('api/lock', () => {
   //   const expected = {
   //     ok: 1,
   //     global: 'rob',
-  //     data: 1,
+  //     data: '1',
   //     subscripts: ['a', 'b']
   //   };
 

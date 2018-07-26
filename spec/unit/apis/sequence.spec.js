@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  24 July 2018
+  26 July 2018
 
 */
 
@@ -159,7 +159,7 @@ describe('api/sequence', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should return first node for subscripted node', () => {
+  it('should return first node for subscripted node and next', () => {
     const expected = {
       ok: 1,
       global: 'rob',
@@ -176,7 +176,7 @@ describe('api/sequence', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should return last node for subscripted node', () => {
+  it('should return last node for subscripted node and previous', () => {
     const expected = {
       ok: 1,
       global: 'rob',
@@ -261,7 +261,7 @@ describe('api/sequence', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should return next node for subscripted node with integer (zero)', () => {
+  it('should return next node for subscripted node when array (zero index)', () => {
     const expected = {
       ok: 1,
       global: 'rob',
@@ -279,7 +279,7 @@ describe('api/sequence', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should return next node for subscripted node with integer (non-zero)', () => {
+  it('should return next node for subscripted node and next when array(non-zero index)', () => {
     const expected = {
       ok: 1,
       global: 'rob',
@@ -297,7 +297,7 @@ describe('api/sequence', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should return first node for subscripted node with integer', () => {
+  it('should return first node for subscripted node and next when array (empty)', () => {
     const expected = {
       ok: 1,
       global: 'rob',
@@ -307,7 +307,7 @@ describe('api/sequence', () => {
 
     const node = {
       global: 'rob',
-      subscripts: ['c', 0, '']
+      subscripts: ['c', '']
     };
 
     const actual = db.sequence(node, 'next');
@@ -315,25 +315,7 @@ describe('api/sequence', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should return last node for subscripted node with integer', () => {
-    const expected = {
-      ok: 1,
-      global: 'rob',
-      result: 2,
-      subscripts: ['c', 2]
-    };
-
-    const node = {
-      global: 'rob',
-      subscripts: ['c', 0, '']
-    };
-
-    const actual = db.sequence(node, 'previous');
-
-    expect(actual).toEqual(expected);
-  });
-
-  it('should return empty result when passed next for non-existed node with integer', () => {
+  it('should return empty node for subscripted node and next when array (non-existed index)', () => {
     const expected = {
       ok: 1,
       global: 'rob',
@@ -351,7 +333,7 @@ describe('api/sequence', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('should return last node when passed previous for non-existed node with integer', () => {
+  it('should return last node for subscripted node and previous when array (non-existed index)', () => {
     const expected = {
       ok: 1,
       global: 'rob',

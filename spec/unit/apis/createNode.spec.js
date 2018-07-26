@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  24 July 2018
+  26 July 2018
 
 */
 
@@ -65,7 +65,7 @@ describe('api/createNode', () => {
     it('should create global node', () => {
       const expected = {
         'node:rob': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': []
@@ -81,13 +81,13 @@ describe('api/createNode', () => {
     it('should create global node when subscripted node exists', () => {
       const expected = {
         'node:rob:a': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': ['a'],
         'children:rob': ['a'],
         'node:rob': {
-          data: 11,
+          data: '11',
           value: 'world'
         }
       };
@@ -105,17 +105,17 @@ describe('api/createNode', () => {
     it('should create subscripted node', () => {
       const expected = {
         'node:rob:a:b': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': ['a:b'],
         'children:rob:a': ['b'],
         'node:rob:a': {
-          data: 10
+          data: '10'
         },
         'children:rob': ['a'],
         'node:rob': {
-          data: 10
+          data: '10'
         }
       };
 
@@ -129,16 +129,16 @@ describe('api/createNode', () => {
     it('should create subscripted node when parent subscripted node has data', () => {
       const expected = {
         'node:rob:a': {
-          data: 11,
+          data: '11',
           value: 'world'
         },
         'leaves:rob': ['a', 'a:b'],
         'children:rob': ['a'],
         'node:rob': {
-          data: 10
+          data: '10'
         },
         'node:rob:a:b': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'children:rob:a': ['b']
@@ -155,20 +155,20 @@ describe('api/createNode', () => {
     it('should create subscripted node when parent node has children', () => {
       const expected = {
         'node:rob:a:b': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': ['a:b', 'a:c'],
         'children:rob:a': ['b', 'c'],
         'node:rob:a': {
-          data: 10
+          data: '10'
         },
         'children:rob': ['a'],
         'node:rob': {
-          data: 10
+          data: '10'
         },
         'node:rob:a:c': {
-          data: 1,
+          data: '1',
           value: 'world'
         }
       };
@@ -184,17 +184,17 @@ describe('api/createNode', () => {
     it('should create subscripted node when top-level global node exists and has data', () => {
       const expected = {
         'node:rob': {
-          data: 11,
+          data: '11',
           value: 'world'
         },
         'node:rob:a:b': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': ['a:b'],
         'children:rob:a': ['b'],
         'node:rob:a': {
-          data: 10
+          data: '10'
         },
         'children:rob': ['a']
       };
@@ -210,22 +210,22 @@ describe('api/createNode', () => {
     it('should create subscripted when top-level global node exists and has data/children', () => {
       const expected = {
         'node:rob': {
-          data: 11,
+          data: '11',
           value: 'world'
         },
         'node:rob:a': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': ['a', 'b:c'],
         'children:rob': ['a', 'b'],
         'node:rob:b:c': {
-          data: 1,
+          data: '1',
           value: 'foo'
         },
         'children:rob:b': ['c'],
         'node:rob:b': {
-          data: 10
+          data: '10'
         }
       };
 
@@ -241,20 +241,20 @@ describe('api/createNode', () => {
     it('should create subscripted node when children leaf node has data', () => {
       const expected = {
         'node:rob:a:b': {
-          data: 11,
+          data: '11',
           value: 'foo'
         },
         'leaves:rob': ['a:b', 'a:b:c'],
         'children:rob:a': ['b'],
         'node:rob:a': {
-          data: 10
+          data: '10'
         },
         'children:rob': ['a'],
         'node:rob': {
-          data: 10
+          data: '10'
         },
         'node:rob:a:b:c': {
-          data: 1,
+          data: '1',
           value: 'bar'
         },
         'children:rob:a:b': ['c']

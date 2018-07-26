@@ -24,7 +24,7 @@
  |  limitations under the License.                                          |
  ----------------------------------------------------------------------------
 
-  24 July 2018
+  26 July 2018
 
 */
 
@@ -108,13 +108,13 @@ describe('api/deleteNode', () => {
     it('should delete subscripted node when parent has data', () => {
       const expected = {
         'node:rob:a': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': ['a'],
         'children:rob': ['a'],
         'node:rob': {
-          data: 10
+          data: '10'
         }
       };
 
@@ -131,16 +131,16 @@ describe('api/deleteNode', () => {
     it('should delete subscripted node when parent has data and children', () => {
       const expected = {
         'node:rob:a': {
-          data: 11,
+          data: '11',
           value: 'foo'
         },
         'leaves:rob': ['a', 'a:c'],
         'children:rob': ['a'],
         'node:rob': {
-          data: 10
+          data: '10'
         },
         'node:rob:a:c': {
-          data: 1,
+          data: '1',
           value: 'world'
         },
         'children:rob:a': ['c']
@@ -160,17 +160,17 @@ describe('api/deleteNode', () => {
     it('should delete subscripted node when parent has children', () => {
       const expected = {
         'node:rob:a:b': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': ['a:b'],
         'children:rob:a': ['b'],
         'node:rob:a': {
-          data: 10
+          data: '10'
         },
         'children:rob': ['a'],
         'node:rob': {
-          data: 10
+          data: '10'
         }
       };
 
@@ -187,13 +187,13 @@ describe('api/deleteNode', () => {
     it('should delete subscripted node when global node has children', () => {
       const expected = {
         'node:rob:a': {
-          data: 1,
+          data: '1',
           value: 'hello'
         },
         'leaves:rob': ['a'],
         'children:rob': ['a'],
         'node:rob': {
-          data: 10
+          data: '10'
         }
       };
 
@@ -210,7 +210,7 @@ describe('api/deleteNode', () => {
     it('should delete subscripted node when global node has data', () => {
       const expected = {
         'node:rob': {
-          data: 1,
+          data: '1',
           value: 'hello'
         }
       };
