@@ -1,11 +1,7 @@
 # ewd-memory-globals: Memory emulation of Global Storage database
 
-[![Build Status](https://travis-ci.org/killmenot/ewd-memory-globals.svg?branch=master)](https://travis-ci.org/killmenot/ewd-memory-globals) [![Coverage Status](https://coveralls.io/repos/github/killmenot/ewd-memory-globals/badge.svg?branch=master)](https://coveralls.io/github/killmenot/ewd-memory-globals?branch=master)
+[![Build Status](https://travis-ci.org/killmenot/ewd-memory-globals.svg?branch=master)](https://travis-ci.org/killmenot/ewd-memory-globals) [![Coverage Status](https://coveralls.io/repos/github/killmenot/ewd-memory-globals/badge.svg?branch=master)](https://coveralls.io/github/killmenot/ewd-memory-globals?branch=master) [![dependencies Status](https://david-dm.org/github/killmenot/status.svg)](https://david-dm.org/github/killmenot) [![devDependencies Status](https://david-dm.org/killmenot/ewd-memory-globals/dev-status.svg)](https://david-dm.org/killmenot/ewd-memory-globals?type=dev) [![npm version](https://img.shields.io/npm/v/ewd-memory-globals.svg)](https://www.npmjs.com/package/ewd-memory-globals) [![Known Vulnerabilities](https://snyk.io/test/github/killmenot/ewd-memory-globals/badge.svg?targetFile=package.json)](https://snyk.io/test/github/killmenot/ewd-memory-globals?targetFile=package.json)
 
-Rob Tweed <rtweed@mgateway.com>
-24 July 2018, M/Gateway Developments Ltd [http://www.mgateway.com](http://www.mgateway.com)  
-
-Twitter: [@rtweed](https://twitter.com/rtweed)
 
 Google Group for discussions, support, advice etc: [http://groups.google.co.uk/group/enterprise-web-developer-community](http://groups.google.co.uk/group/enterprise-web-developer-community)
 
@@ -100,22 +96,24 @@ simple keys:
 
 ## License
 
- Copyright (c) 2018 M/Gateway Developments Ltd,                           
- Reigate, Surrey UK.                                                      
- All rights reserved.                                                     
-                                                                           
-  http://www.mgateway.com                                                  
-  Email: rtweed@mgateway.com                                               
-                                                                           
-                                                                           
-  Licensed under the Apache License, Version 2.0 (the "License");          
-  you may not use this file except in compliance with the License.         
-  You may obtain a copy of the License at                                  
-                                                                           
-      http://www.apache.org/licenses/LICENSE-2.0                           
-                                                                           
-  Unless required by applicable law or agreed to in writing, software      
-  distributed under the License is distributed on an "AS IS" BASIS,        
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-  See the License for the specific language governing permissions and      
-   limitations under the License.      
+The MIT License (MIT)
+
+    Copyright (c) Alexey Kucherenko
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.    
